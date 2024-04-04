@@ -1,8 +1,8 @@
 import flet as ft
 
-numero_mes = int(input("Digite um número de 1 a 12: "))
+import flet as ft
 
-def mes_do_ano(numero):
+def mes_correspondente(numero):
     match numero:
         case 1:
             return "Janeiro"
@@ -29,11 +29,20 @@ def mes_do_ano(numero):
         case 12:
             return "Dezembro"
         case _:
-            return "Valor inválido"
+            return "Número inválido. Digite um valor entre 1 e 12."
 
-print(f"O mês correspondente ao número {numero_mes} é {mes_do_ano(numero_mes)}.")
+def btn_click():
+    numero = int(texto.get_text())
+    mes = mes_correspondente(numero)
+    msg.set_text(f"O mês correspondente ao dia {numero} é: {mes}")
 
+def main(page: ft.Page):
+    global texto, msg
+    texto = ft.TextField(width=200, height=40)
+    msg = ft.Text("Escolha um dia do mês de 1 a 12: ")
+    btn1 = ft.ElevatedButton("Mes do ano", width=200, on_click=btn_click)
+    page.add(texto, msg, btn1, )
+    page.update()
+    
 
-
-
-
+ft.app(target=main)

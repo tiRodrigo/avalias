@@ -1,3 +1,4 @@
+import flet as ft
 
 
 nome_maquina = str("string")

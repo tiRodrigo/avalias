@@ -1,3 +1,4 @@
+import flet as ft
 
 numero_semana = int(input("Digite um número de 1 a 7: "))
 

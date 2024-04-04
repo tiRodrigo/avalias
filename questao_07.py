@@ -1,3 +1,7 @@
+import flet as ft
+
+
+
 #NOTE - o que é uma classe?
     #Uma classe é uma forma de definir um tipo de dado em uma linguagem orientada a objeto. Ela é formada por dados e comportamentos.
 
